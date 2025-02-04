@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .event {
+            display: flex;
+            width: 50%;
+            background: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #007bff;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -8px;
+        }
+
+        .event:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .event:nth-child(even)::before {
+            left: auto;
+            right: -8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="event">📅 Event 1: Started Project</div>
+        <div class="event">🚀 Event 2: Launched MVP</div>
+        <div class="event">🎉 Event 3: Got First 100 Users</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        <div class="event">🏆 Event 4: Won an Award</div>
+        
+    </div>
+</body>
+</html>
